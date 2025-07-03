@@ -1,5 +1,6 @@
 import express from 'express';
 import usuariosRouter from './usuarios.router.js';
+import prestamosRouter from './prestamos.router.js';
 
 
 const routerapi =(app)=>{
@@ -9,9 +10,7 @@ app.use('/api/v1', router);
 
 router.use('/usuarios', usuariosRouter);
 
-router.get('/products', (req, res) => {
-  res.status(200).json({ message: 'List of products' });       
-});
+router.use('/prestamos',prestamosRouter);
 
 
 };
